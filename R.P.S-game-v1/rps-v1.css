@@ -1,1 +1,27 @@
-
+h1 {
+    text-align: center;
+    color: black;
+}
+html {
+    background-color: rgb(169, 206, 255);
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+body {
+    /* color: white; */
+}
+div {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+button {
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    align-items: center;
+    margin: 8px auto;
+    background-color: rgb(252, 151, 69);
+}
