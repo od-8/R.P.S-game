@@ -7,54 +7,31 @@ let urchoice = document.getElementById('urchoice')
 
 function rockFunction () {
     let randomNum1 = Math.floor(Math.floor(Math.random() * 3));
-    const options = ['Rock', 'Paper', 'Scissors']
-    let randomOption = options[randomNum1]
-        console.log(randomOption)
-    /*  
-    let randomNum2 = Math.floor(Math.floor(Math.random() * 4) + 3);
-    let randomNum3 = Math.floor(Math.floor(Math.random() * 4) + 6);
-
-    if (randomNum1 == 1 ) {
-        computerChoice.textContent = "Paper";
-        message.textContent = "You lose";
-    } else if (randomNum == 2 ) {
-        computerChoice.textContent = "Rock";
-        message.textContent = "Draw";
-    } else {
-        computerChoice.textContent = "Scissors";
-        message.textContent = "You win";
-    }
-    if (randomNum2 == 5) {
-        computerChoice.textContent = "Scissors";
-        message.textContent = "You lose";
-    } else if (randomNum == 6) {
-        computerChoice.textContent = "Paper";
-        message.textContent = "Draw";
-    } else {
-        computerChoice.textContent = "Rock";
-        message.textContent = "You win";
-    }
-    if (randomNum3 == 1 ) {
-        computerChoice.textContent = "Rock";
-        message.textContent = "You lose";
-    } else if (randomNum == ) {
-        computerChoice.textContent = "Scissors";
-        message.textContent = "Draw";
-    } else {
-        computerChoice.textContent = "Paper";
-        message.textContent = "You win";
-    } */
+    const options = ['Rock', 'Paper', 'Scissors'];
+    let randomOption = options[randomNum1];
+    let userInput = rockBtn && paperBtn && scissorsBtn;
     
-    if (randomOption == rockBtn.textContent || randomOption == scissorsBtn.textContent || randomOption == paperBtn.textContent) {
+    /* if ( (randomOption == "Rock" && rock) || (randomOption == "Scissors" && scissors) || (randomOption == "Paper" && paper) ) {
+        computerChoice.textContent = randomOption
         message.textContent = "Draw";
-        computerChoice.textContent = randomOption;
-        //console.log(randomOption)
-    } else if (randomOption != scissorsBtn.textContent) {
-        message.textContent = "L u lose"
-    }
-    //console.log(rockBtn.textContent)
+    } else if ((randomOption == "Rock" && scissors) || (randomOption == "Scissors" && paper) || (randomOption == "Paper" && rock)) {
+        computerChoice.textContent = randomOption
+        message.textContent = "U win";
+    }  */
+
+   if ( (randomOption == "Rock" && rock == true) || (randomOption == "Scissors" && scissors == true) || (randomOption == "Paper" && paper == true) ) {
+        computerChoice.textContent = randomOption
+        message.textContent = "Draw";
+    } else if ((randomOption == "Rock" && scissors == true) || (randomOption == "Scissors" && paper == true) || (randomOption == "Paper" && rock == true)) {
+        computerChoice.textContent = randomOption
+        message.textContent = "U win";
+    }  
 }
 
 rockBtn.addEventListener('click', rockFunction);
 paperBtn.addEventListener('click', rockFunction);
 scissorsBtn.addEventListener('click', rockFunction);
+
+let rock = rockBtn.addEventListener('click', () => {});
+let paper = paperBtn.addEventListener('click', () => {});
+let scissors = scissorsBtn.addEventListener('click', () => {});
