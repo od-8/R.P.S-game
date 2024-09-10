@@ -8,13 +8,16 @@
     </head>
     <body>
         <h1> Rock Paper Scissors game</h1>
-        <p> Computer chose:</p>
-        <div id="computer-choice"></div>
-        <button id="rock" type="button">Rock</button>
-        <button id="paper" type="button">Paper</button>
-        <button id="scissors" type="button">Scissors</button>
-        <div id="win/lose"></div>
-        <div id="urchoice"></div>
+        <div>
+            <button id="rock" type="button" onclick="playGame('rock')">Rock</button>
+            <button id="paper" type="button" onclick="playGame('paper')">Paper</button>
+            <button id="scissors" type="button" onclick="playGame('scissors')">Scissors</button>
+        </div>
+        <div id="user-choice">Your choice: </div>
+        <div id="computer-choice">Computer choice: </div>
+        <div id="winner"> You will find out!</div>
+        <div id="user-score">Your score: </div>
+        <div id="computer-score">Computer score: </div>
     </body>
     <script src="rps-v2.js"></script>
 </html>

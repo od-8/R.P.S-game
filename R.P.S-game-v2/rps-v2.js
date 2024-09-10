@@ -1,37 +1,51 @@
-let rockBtn = document.getElementById('rock');
-let paperBtn = document.getElementById('paper');
-let scissorsBtn = document.getElementById('scissors');
-const message = document.getElementById('win/lose');
-const computerChoice = document.getElementById('computer-choice')
-let urchoice = document.getElementById('urchoice')
+const options = ['rock', 'paper', 'scissors'];
+const computerChoice = document.getElementById('computer-choice');
+const userChoice = document.getElementById('user-choice');
+const winner = document.getElementById('winner');
+const userScore = document.getElementById('user-score');
+const computerScore = document.getElementById('computer-score');
 
-function rockFunction () {
-    let randomNum1 = Math.floor(Math.floor(Math.random() * 3));
-    const options = ['Rock', 'Paper', 'Scissors'];
-    let randomOption = options[randomNum1];
-    let userInput = rockBtn && paperBtn && scissorsBtn;
-    
-    /* if ( (randomOption == "Rock" && rock) || (randomOption == "Scissors" && scissors) || (randomOption == "Paper" && paper) ) {
-        computerChoice.textContent = randomOption
-        message.textContent = "Draw";
-    } else if ((randomOption == "Rock" && scissors) || (randomOption == "Scissors" && paper) || (randomOption == "Paper" && rock)) {
-        computerChoice.textContent = randomOption
-        message.textContent = "U win";
-    }  */
-
-   if ( (randomOption == "Rock" && rock == true) || (randomOption == "Scissors" && scissors == true) || (randomOption == "Paper" && paper == true) ) {
-        computerChoice.textContent = randomOption
-        message.textContent = "Draw";
-    } else if ((randomOption == "Rock" && scissors == true) || (randomOption == "Scissors" && paper == true) || (randomOption == "Paper" && rock == true)) {
-        computerChoice.textContent = randomOption
-        message.textContent = "U win";
-    }  
+function playGame(playerChoice) {
+    const randomChoice = options[Math.floor(Math.random() * 3)];
+    let userNum = 0;
+    let computerNum = 0;
+    let result = "";
+    if (playerChoice === randomChoice) {
+        result = "IT'S A TIE!";
+    } else {
+        switch(playerChoice) {
+            case "rock":
+                if (randomChoice == "scissors") {
+                    result = "YOU WIN!";
+                    userNum++;
+                } else {
+                    result = "YOU LOSE!";
+                    computerNum++;
+                };
+            break;
+            case "paper":            
+                if (randomChoice == "paper") {
+                    result = "YOU WIN!";
+                    userNum++;
+                } else {
+                    result = "YOU LOSE!";
+                    computerNum++;
+                };
+            break;
+            case "scissors":
+                if (randomChoice == "scissors") {
+                    result = "YOU WIN!";
+                    userNum++;
+                } else {
+                    result = "YOU LOSE!";
+                    computerNum++;
+                };
+            break;
+        }
+    }
+    userChoice.textContent = `PLAYER: ${playerChoice}`;
+    computerChoice.textContent = `COMPUTER: ${randomChoice}`;
+    winner.textContent = result;
+    userScore.textContent = userNum;
+    computerScore.textContent = computerNum;
 }
-
-rockBtn.addEventListener('click', rockFunction);
-paperBtn.addEventListener('click', rockFunction);
-scissorsBtn.addEventListener('click', rockFunction);
-
-let rock = rockBtn.addEventListener('click', () => {});
-let paper = paperBtn.addEventListener('click', () => {});
-let scissors = scissorsBtn.addEventListener('click', () => {});
